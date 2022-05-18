@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  background-color: #673ab7 ;
+  color:#fff;
+}
+
+.header a {
+  color: #fff;
+}
+
