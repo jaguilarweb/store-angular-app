@@ -1,0 +1,14 @@
+.card {
+  margin: 64px 10px 10px 10px;
+  max-width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.select-input {
+  width: 50px;
+  margin-bottom: 8px;
+}
