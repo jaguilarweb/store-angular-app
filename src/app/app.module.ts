@@ -8,6 +8,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AppRoutingModule,
     MatButtonModule,
     MatCardModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
