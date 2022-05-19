@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
