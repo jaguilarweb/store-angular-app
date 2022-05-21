@@ -10,6 +10,10 @@
     <p *ngIf="prodIdRoute" >{{product.description}}</p>
   <input type="number" class="select-input" >
   <mat-card-actions>
-    <button mat-flat-button color="primary">Add to cart </button>
+    <button
+      mat-flat-button color="primary"
+      type="button"
+      (click)="addItemToCart(product)"
+      >Add to cart </button>
   </mat-card-actions>
 </mat-card>

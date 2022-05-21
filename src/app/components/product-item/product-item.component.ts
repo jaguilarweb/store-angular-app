@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 
 import { Product } from '../../models/Product';
+import { CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -17,7 +18,9 @@ export class ProductItemComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
+
   ) {
     this.product = {
       id: 1,
@@ -36,6 +39,12 @@ export class ProductItemComponent implements OnInit {
     this.productService.getProducts().subscribe(res => {
       this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
     })
+  }
+
+  addItemToCart(product: Product) {
+    //TODO: Increase on depend of the quantity
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added!')
   }
 
 }
