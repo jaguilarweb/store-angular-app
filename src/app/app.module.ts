@@ -9,13 +9,15 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductItemComponent,
-    NavBarComponent
+    NavBarComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

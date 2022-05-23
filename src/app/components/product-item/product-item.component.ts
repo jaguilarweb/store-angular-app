@@ -42,9 +42,10 @@ export class ProductItemComponent implements OnInit {
   }
 
   addItemToCart(product: Product) {
+    console.log(`Prod_item argument: ${product}`)
     //TODO: Increase on depend of the quantity
     this.cartService.addToCart(product);
-    window.alert('Your product has been added!')
+    window.alert(`Your product ${product} has been added!`)
   }
 
 }
