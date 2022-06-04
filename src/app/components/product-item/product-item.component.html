@@ -3,17 +3,19 @@
     <mat-card-title>{{ product.name }}</mat-card-title>
     <mat-card-subtitle>$ {{ product.price }}</mat-card-subtitle>
   </mat-card-header>
-  <a routerLink="products/{{product.id}}">
-    <mat-card-subtitle>More detail </mat-card-subtitle>
-  </a>
-    <img mat-card-image src="{{product.url}}" alt="Photo of {{product.name}}">
+  <div *ngIf="!prodIdRoute">
+    <a routerLink="products/{{product.id}}">
+      <mat-card-subtitle>More detail </mat-card-subtitle>
+    </a>
+  </div>
+  <img mat-card-image src="{{product.url}}" alt="Photo of {{product.name}}">
     <p *ngIf="prodIdRoute" >{{product.description}}</p>
   <input type="number" class="select-input" >
   <mat-card-actions>
     <button
       mat-flat-button color="primary"
       type="button"
-      (click)="addItemToCart(product)"
+      (click)="addItemToCart(product.id)"
       >Add to cart </button>
   </mat-card-actions>
 </mat-card>

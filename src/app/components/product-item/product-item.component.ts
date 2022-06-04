@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
-
 import { Product } from '../../models/Product';
 import { CartService} from '../../services/cart.service';
 
@@ -12,15 +11,14 @@ import { CartService} from '../../services/cart.service';
 })
 export class ProductItemComponent implements OnInit {
 
-  products: Product[] = [];
-  @Input() product: Product;
+  @Input() product!: Product;
+  //productSelected: Product;
   prodIdRoute: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
     private cartService: CartService
-
   ) {
     this.product = {
       id: 1,
@@ -35,17 +33,24 @@ export class ProductItemComponent implements OnInit {
     // Angular documentation, to obtain the product id
     const routePar = this.route.snapshot.paramMap;
     this.prodIdRoute = Number(routePar.get('productId'));
-    //TODO: I need to look for the id provided into the all products to render it.
+    if(this.prodIdRoute !== 0){
+      this.productService.getProducts().subscribe(res => {
+        this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
+      })
+    }
+/*     //TODO: I need to look for the id provided into the all products to render it.
     this.productService.getProducts().subscribe(res => {
       this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
-    })
+    }) */
+
   }
 
-  addItemToCart(product: Product) {
-    console.log(`Prod_item argument: ${product}`)
+  addItemToCart(id: number) {
+    console.log(`Prod_item argument: `)
     //TODO: Increase on depend of the quantity
-    this.cartService.addToCart(product);
-    window.alert(`Your product ${product} has been added!`)
+    //this.productService.getProductItem(id).subscribe(res =>  this.product = res )
+    this.cartService.addToCart(this.product);
+    window.alert(`Your product ${this.product} has been added!`)
   }
 
 }
