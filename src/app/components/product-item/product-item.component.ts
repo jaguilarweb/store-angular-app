@@ -38,14 +38,10 @@ export class ProductItemComponent implements OnInit {
         this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
       })
     }
-/*     //TODO: I need to look for the id provided into the all products to render it.
-    this.productService.getProducts().subscribe(res => {
-      this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
-    }) */
 
   }
 
-  addItemToCart(id: number) {
+  addItemToCart() {
     console.log(`Prod_item argument: `)
     //TODO: Increase on depend of the quantity
     //this.productService.getProductItem(id).subscribe(res =>  this.product = res )
