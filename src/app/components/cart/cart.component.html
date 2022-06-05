@@ -1,12 +1,15 @@
 <h3>Cart</h3>
 <div class="cart-container">
-  <div class="cart-item">
-    <div class="cart-item-details">
-      <div *ngFor="let item of items">
-        <span>{{item.name}}</span>
-        <span>{{item.price}}</span>
+  <div>
+    <div class="cart-item" *ngFor="let item of items">
+      <div class="cart-item-details" >
+          <img src="{{item.url}}" alt="Photo of {{item.name}}" >
+          <h2>{{item.name}}</h2>
+          <h3>{{item.price}}</h3>
+          <span>{{item.quantitity}}</span>
       </div>
     </div>
   </div>
 </div>
+
 

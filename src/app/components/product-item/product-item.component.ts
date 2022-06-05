@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/Product';
 import { CartService} from '../../services/cart.service';
 
+
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -12,8 +13,10 @@ import { CartService} from '../../services/cart.service';
 export class ProductItemComponent implements OnInit {
 
   @Input() product!: Product;
-  //productSelected: Product;
   prodIdRoute: number = 0;
+  //If I want to control the atribute quntitity from here
+  //I could to binding in the html as '[value]="quantitity"'
+  //quantitity: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,15 +41,18 @@ export class ProductItemComponent implements OnInit {
         this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
       })
     }
+  }
 
+//Some other event to use https://www.eduforbetterment.com/lists-of-useful-events-types-for-event-binding-in-angular/
+  onChange(event: Event){
+    const element = event.target as HTMLInputElement;
+    this.product.quantitity = Number(element.value);
   }
 
   addItemToCart() {
-    console.log(`Prod_item argument: `)
-    //TODO: Increase on depend of the quantity
-    //this.productService.getProductItem(id).subscribe(res =>  this.product = res )
     this.cartService.addToCart(this.product);
     window.alert(`Your product ${this.product} has been added!`)
   }
+
 
 }
