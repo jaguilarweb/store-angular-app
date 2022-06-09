@@ -40,7 +40,7 @@ export class ProductItemComponent implements OnInit {
       this.productService.getProducts().subscribe(res => {
         this.product = res.find(prod => prod.id === this.prodIdRoute) as unknown as Product;
         if(this.product.quantitity === undefined){
-          this.product.quantitity = 0;
+          this.product.quantitity = 1;
         }
       })
     }

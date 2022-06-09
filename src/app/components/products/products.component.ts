@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
       //this.products = res;
       for (let index=0; index < res.length; index++){
         const product = res[index];
-        product["quantitity"] = 0;
+        product["quantitity"] = 1;
       }
       this.products = res;
     });

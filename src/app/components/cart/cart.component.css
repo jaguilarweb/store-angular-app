@@ -43,3 +43,7 @@ img {
   justify-content: center;
   margin-top: 64px;
 }
+
+.form-container{
+  margin: 0, 0, 0, 30px;
+}

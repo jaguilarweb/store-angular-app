@@ -10,7 +10,7 @@
   </div>
   <img mat-card-image src="{{product.url}}" alt="Photo of {{product.name}}">
     <p *ngIf="prodIdRoute" >{{product.description}}</p>
-  <input type="number" class="select-input" value={{product.quantitity}} (change)="onChange($event)">
+  <input type="number" class="select-input" value={{product.quantitity}} (change)="onChange($event)" min="1">
   <mat-card-actions>
     <button
       mat-flat-button color="primary"

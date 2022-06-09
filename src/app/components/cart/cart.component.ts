@@ -11,6 +11,9 @@ export class CartComponent implements OnInit {
 
   items: Product[] = [];
   totalCart: number = 0;
+  fullname: string = 'Nombre';
+  adress: string = 'Direccion';
+  card: number = 0;
 
   constructor(
     private cartService: CartService
@@ -26,7 +29,7 @@ export class CartComponent implements OnInit {
 
   //Pick up the new amount of items
   //and execute result
-  onChangeQuantitity(event: Event, id: number){
+  onChangeQuantitity(event: Event, id: number): void{
     let quantitity = event.target as HTMLInputElement;
     this.items.map(item => {
       if(item.id === id){
@@ -38,7 +41,11 @@ export class CartComponent implements OnInit {
     this.totalCartResult();
   }
 
-  totalCartResult(){
+  submitForm(){
+
+  }
+
+  totalCartResult(): void {
     this.items.forEach(item => {
       this.totalCart += (item.quantitity! * item.price)
     });
