@@ -1,12 +1,16 @@
 <h3>Cart</h3>
 <div class="cart-container">
   <div>
+    <h2>Total: $<span>{{totalCart}}</span></h2>
+
     <div class="cart-item" *ngFor="let item of items">
       <div class="cart-item-details" >
           <img src="{{item.url}}" alt="Photo of {{item.name}}" >
           <h2>{{item.name}}</h2>
           <h3>{{item.price}}</h3>
-          <span>{{item.quantitity}}</span>
+<!--           <span>{{item.quantitity}}</span> -->
+        <label>Amount: </label>
+          <input type="number" class="select-input" value={{item.quantitity}} (change)="onChangeQuantitity($event, item.id)" required>
       </div>
     </div>
   </div>

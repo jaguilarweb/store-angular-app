@@ -10,6 +10,7 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit {
 
   items: Product[] = [];
+  totalCart: number = 0;
 
   constructor(
     private cartService: CartService
@@ -19,6 +20,27 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = this.cartService.getCartItems();
+    //Set initial value to this.totalCart
+    this.totalCartResult();
   }
 
+  //Pick up the new amount of items
+  //and execute result
+  onChangeQuantitity(event: Event, id: number){
+    let quantitity = event.target as HTMLInputElement;
+    this.items.map(item => {
+      if(item.id === id){
+        item.quantitity = Number(quantitity.value)
+      }
+    })
+    //Restart the total cart
+    this.totalCart = 0;
+    this.totalCartResult();
+  }
+
+  totalCartResult(){
+    this.items.forEach(item => {
+      this.totalCart += (item.quantitity! * item.price)
+    });
+  }
 }

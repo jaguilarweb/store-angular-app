@@ -11,7 +11,9 @@ export class CartService {
   constructor() { }
 
   addToCart(product: Product): void {
-    console.log(`Service: ${product}`)
+    if(product.quantitity === undefined){
+      product.quantitity = 0;
+    }
     this.items.push(product);
   }
 
