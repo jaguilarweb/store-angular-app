@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Route, Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-order-page',
@@ -12,6 +13,7 @@ export class OrderPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -20,5 +22,6 @@ export class OrderPageComponent implements OnInit {
     this.total = Number(routePar.get('total'));
     this.name = String(routePar.get('name'));
   }
+
 
 }

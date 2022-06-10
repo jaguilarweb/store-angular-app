@@ -15,17 +15,17 @@
 
   </div>
   <div class="form-container">
-    <form class="form-margin" (ngSubmit)="submitForm()">
-        <label>Full name</label>
-        <input type="text" name="fullname" [(ngModel)]="fullname">
+    <form #myForm="ngForm" class="form-margin" (ngSubmit)="submitForm()">
+        <label for="fullname">Full name</label>
+        <input type="text" name="fullname" minlength="8" [(ngModel)]="fullname" required>
       <br>
-        <label>Adress</label>
-        <input type="text" name="adress" [(ngModel)]="adress" >
+        <label for="adress">Adress</label>
+        <input type="text" name="adress" [(ngModel)]="adress" required >
         <br>
-      <label>Credit card number</label>
-      <input type="number" name="card" class="number-input" [(ngModel)]="card">
+      <label for="card">Credit card number</label>
+      <input type="password"  name="card" class="number-input" [(ngModel)]="card" required>
       <br>
-      <input type="submit" value="submit">
+      <button [disabled]="myForm.invalid" type="submit" material mat-flat-button color="primary">Submit</button>
     </form>
   </div>
 </div>
