@@ -11,6 +11,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule } from '@angular/forms';
+import { OrderPageComponent } from './components/order-page/order-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     ProductsComponent,
     ProductItemComponent,
     NavBarComponent,
-    CartComponent
+    CartComponent,
+    OrderPageComponent
   ],
   imports: [
     BrowserModule,

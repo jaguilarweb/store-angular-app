@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/Product';
 import { CartService } from '../../services/cart.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,12 +12,14 @@ export class CartComponent implements OnInit {
 
   items: Product[] = [];
   totalCart: number = 0;
-  fullname: string = 'Nombre';
-  adress: string = 'Direccion';
+  fullname: string = '';
+  adress: string = '';
   card: number = 0;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {
 
   }
@@ -42,7 +45,8 @@ export class CartComponent implements OnInit {
   }
 
   submitForm(){
-
+    //Navigate to order-page, and send parameters
+    this.router.navigate(['order', { total: this.totalCart, name: this.fullname } ], { relativeTo: this.route });
   }
 
   totalCartResult(): void {
