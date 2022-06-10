@@ -13,7 +13,6 @@ export class OrderPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
   ) { }
 
   ngOnInit(): void {

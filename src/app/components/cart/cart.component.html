@@ -2,7 +2,7 @@
 <div class="cart-container">
   <div class="cart-panel">
     <h2>Total: $<span>{{totalCart | number: '1.0-2' }}</span></h2>
-
+    <button material mat-flat-button color="primary" (click)="clearMyCart()">Clean the cart</button>
     <div class="cart-item" *ngFor="let item of items">
       <div class="cart-item-details " >
           <img src="{{item.url}}" alt="Photo of {{item.name}}" >
