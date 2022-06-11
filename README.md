@@ -1,7 +1,5 @@
 # Store Angular App
 
-# In progress... :construction:
-
 ## Introduction
 
 Store Angular App Project is an e-commerce website – an application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process
@@ -18,8 +16,6 @@ This application reflects the same user experience as that of a real-world e-com
 - **Order confirmation page**, which shows the outcome after the user completes the checkout process (i.e., submits the checkout form).
 
 
-
-
 ## Tech Stack (Dependencies)
 
 ### 1.- Backend Dependencies
@@ -27,7 +23,7 @@ This application reflects the same user experience as that of a real-world e-com
 There are not Backend in this version.
 Fake data are used to simulate an API backend. 
 
-### 2.- Front end Dependencies
+### 2.- Front-end Dependencies
 
 This aplication need to have installed Node and NPM and Angular:
 
@@ -45,7 +41,7 @@ ng add @angular/material
 ### 1.- Download the project starter code locally
 
 ```
-git clone git@github.com:jaguilarweb xxxxxx
+git clone https://github.com/jaguilarweb/store-angular-app.git
 ```
 
 ### 2.- Install dependencies
@@ -58,14 +54,13 @@ To run local: ```ng serve```
 ### 5.- Open a browser
 
 Open your browser and write a request like:
-```http://localhost:3000/api/```
+```http://localhost:4200/```
 
 
 ### Getting Started
 
 - Base URL: At present this app can only be run locally and is not hosted as a base URL. 
 - Authentication: This version of the application does not require authentication or API keys.
-
 
 
 ## Disclaimer
