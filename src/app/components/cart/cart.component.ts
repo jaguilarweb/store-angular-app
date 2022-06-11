@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   fullname: string = '';
   adress: string = '';
   card: string = '';
+  numberItems: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -26,6 +27,9 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = this.cartService.getCartItems();
+    if(this.items.length >= 1){
+      this.numberItems = true;
+    }
     //Set initial value to this.totalCart
     this.totalCartResult();
   }
@@ -58,5 +62,6 @@ export class CartComponent implements OnInit {
   clearMyCart(): void {
     this.items = this.cartService.clearCart()
     this.totalCart = 0;
+    this.numberItems = false;
   }
 }

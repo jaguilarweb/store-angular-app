@@ -57,5 +57,4 @@ export class ProductItemComponent implements OnInit {
     window.alert(`Your product ${this.product} has been added!`)
   }
 
-
 }
