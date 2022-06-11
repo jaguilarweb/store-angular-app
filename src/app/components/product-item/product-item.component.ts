@@ -46,12 +46,12 @@ export class ProductItemComponent implements OnInit {
   }
 
 //Some other event to use https://www.eduforbetterment.com/lists-of-useful-events-types-for-event-binding-in-angular/
-  onChange(event: Event){
+  onChange(event: Event): void{
     const element = event.target as HTMLInputElement;
     this.product.quantitity = Number(element.value);
   }
 
-  addItemToCart() {
+  addItemToCart() : void {
     this.cartService.addToCart(this.product);
     window.alert(`Your product ${this.product.name} has been added!`)
   }
