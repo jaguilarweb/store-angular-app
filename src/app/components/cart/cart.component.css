@@ -12,6 +12,7 @@ img {
 .cart-item {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -20,7 +21,7 @@ img {
   justify-content: center;
   flex-direction: column;
   align-items: left;
-  margin-left: 80px;
+  margin-left: 70px;
 }
 
 .select-input {

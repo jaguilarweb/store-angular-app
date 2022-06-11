@@ -4,7 +4,6 @@ import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/Product';
 import { CartService} from '../../services/cart.service';
 
-
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -54,7 +53,7 @@ export class ProductItemComponent implements OnInit {
 
   addItemToCart() {
     this.cartService.addToCart(this.product);
-    window.alert(`Your product ${this.product} has been added!`)
+    window.alert(`Your product ${this.product.name} has been added!`)
   }
 
 }

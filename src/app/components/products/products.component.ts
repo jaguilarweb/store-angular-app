@@ -17,8 +17,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(res => {
-      //Here we can include atribute there are not included in the original data
-      //this.products = res;
+      //Here we can include atributes
+      //there are not included in the original data
       for (let index=0; index < res.length; index++){
         const product = res[index];
         product["quantitity"] = 1;

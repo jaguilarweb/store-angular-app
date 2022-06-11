@@ -10,20 +10,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  items: Product[] = [];
-  totalCart: number = 0;
-  fullname: string = '';
-  adress: string = '';
-  card: string = '';
-  numberItems: boolean = false;
+  items: Product[]= [];
+  totalCart: number= 0;
+  fullname: string= '';
+  adress: string= '';
+  card: string= '';
+  numberItems: boolean= false;
 
   constructor(
     private cartService: CartService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
     this.items = this.cartService.getCartItems();
@@ -48,9 +46,11 @@ export class CartComponent implements OnInit {
     this.totalCartResult();
   }
 
-  submitForm(){
+  submitForm(): void {
     //Navigate to order-page, and send parameters
-    this.router.navigate(['order', { total: this.totalCart, name: this.fullname } ], { relativeTo: this.route });
+    this.router.navigate(['order',
+      { total: this.totalCart, name: this.fullname } ],
+      { relativeTo: this.route });
   }
 
   totalCartResult(): void {

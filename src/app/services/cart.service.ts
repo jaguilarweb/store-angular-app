@@ -12,7 +12,7 @@ export class CartService {
 
   addToCart(product: Product): void {
     if(product.quantitity === undefined){
-      product.quantitity = 0;
+      product.quantitity= 0;
     }
     this.items.push(product);
   }
@@ -22,7 +22,7 @@ export class CartService {
   }
 
   clearCart(): Product[] {
-    this.items = [];
+    this.items= [];
     return this.items;
   }
 

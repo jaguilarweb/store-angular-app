@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Route, Router} from '@angular/router';
-
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-order-page',
@@ -8,8 +7,8 @@ import { ActivatedRoute, Route, Router} from '@angular/router';
   styleUrls: ['./order-page.component.css']
 })
 export class OrderPageComponent implements OnInit {
-  total: number = 0;
-  name: string = '';
+  total: number= 0;
+  name: string= '';
 
   constructor(
     private route: ActivatedRoute,
@@ -17,10 +16,9 @@ export class OrderPageComponent implements OnInit {
 
   ngOnInit(): void {
     //process the route and retrive parameters
-    const routePar = this.route.snapshot.paramMap;
-    this.total = Number(routePar.get('total'));
-    this.name = String(routePar.get('name'));
+    const routePar= this.route.snapshot.paramMap;
+    this.total= Number(routePar.get('total'));
+    this.name= String(routePar.get('name'));
   }
-
 
 }

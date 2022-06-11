@@ -15,12 +15,12 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  getProducts(): Observable<Product[]>{
+  getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productUrl);
   }
 
-  getProductItem(id: number): Observable<Product>{
-    const url = `${this.productUrl}/?id=${id}`
+  getProductItem(id: number): Observable<Product> {
+    const url = `${this.productUrl}/?id=${id}`;
     return this.http.get<Product[]>(url).pipe(
       map((products: Product[]) => products[0])
     );

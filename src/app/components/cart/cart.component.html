@@ -1,37 +1,45 @@
 <div class="cart-container">
   <div class="cart-panel">
     <h2>Total: $<span>{{totalCart | number: '1.0-2' }}</span></h2>
-    <button material mat-flat-button color="primary" (click)="clearMyCart()">Clean the cart</button>
+    <button
+      material mat-flat-button color="primary"
+      (click)="clearMyCart()">Clean the cart
+    </button>
     <div *ngIf="!numberItems">
       <h3>There are not items in the cart</h3>
     </div>
     <div class="cart-item" *ngFor="let item of items">
-      <img src="{{item.url}}" alt="Photo of {{item.name}}" >
-
-      <div class="cart-item-details " >
-            <h2>{{item.name}}</h2>
-            <h3>$ {{item.price}}</h3>
-            <label>Amount: </label>
-            <input type="number" class="select-input" value={{item.quantitity}} (change)="onChangeQuantitity($event, item.id)" min="1" required>
-
+      <img src="{{item.url}}" alt="Photo of {{item.name}}">
+      <div class="cart-item-details">
+        <h2>{{item.name}}</h2>
+        <h3>$ {{item.price}}</h3>
+        <label>Amount: </label>
+        <input
+          type="number"
+          class="select-input"
+          value={{item.quantitity}}
+          (change)="onChangeQuantitity($event, item.id)"
+          min="1"
+          required>
       </div>
     </div>
-
   </div>
   <div class="form-container">
     <form #myForm="ngForm" class="form-margin" (ngSubmit)="submitForm()">
-        <label for="fullname">Full name</label>
-        <input type="text" name="fullname" minlength="8" [(ngModel)]="fullname" required>
+      <label for="fullname">Full name</label>
+      <input type="text" name="fullname" minlength="8" [(ngModel)]="fullname" required>
       <br>
-        <label for="adress">Adress</label>
-        <input type="text" name="adress" [(ngModel)]="adress" required >
-        <br>
+      <label for="adress">Adress</label>
+      <input type="text" name="adress" [(ngModel)]="adress" required >
+      <br>
       <label for="card">Credit card number</label>
       <input type="password"  name="card" class="number-input" [(ngModel)]="card" required>
       <br>
-      <button [disabled]="myForm.invalid" type="submit" material mat-flat-button color="primary">Submit</button>
+      <button [disabled]="myForm.invalid"
+        type="submit"
+        material mat-flat-button color="primary">
+          Submit
+      </button>
     </form>
   </div>
 </div>
-
-

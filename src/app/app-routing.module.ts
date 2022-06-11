@@ -8,9 +8,8 @@ import { OrderPageComponent } from './components/order-page/order-page.component
 const routes: Routes = [
   { path: '', component: ProductsComponent },
   { path: 'products/:productId', component: ProductItemComponent },
+  { path: 'cart/order', component: OrderPageComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'cart/order', component: OrderPageComponent }
-
 ];
 
 @NgModule({
